@@ -1,0 +1,23 @@
+SELECT
+  tracks.Name AS track,
+  albums.Title AS album,
+  artists.Name as artist
+FROM tracks
+INNER JOIN albums
+ON tracks.AlbumId = albums.AlbumId
+INNER JOIN artists
+ON albums.ArtistId = artists.ArtistId
+LIMIT 5;
+
+
+
+
+SELECT tracks.Name as trackName, genres.Name as genreName
+FROM tracks
+INNER JOIN genres
+ON tracks.GenreId = genres.GenreId
+LIMIT 5
+
+SELECT tracks.Name as trackName, genres.Name as genreName
+FROM tracks, genres
+WHERE tracks.GenreId = genres.GenreId;
